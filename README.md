@@ -1,5 +1,5 @@
 # Simple custom start page for Cognos Planning Contributor 8 Application
 
-Using original css-file and table-layout
+Using stripped original css-file and div-layout
 
-&copy; 2014
+&copy; 2015

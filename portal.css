@@ -1,0 +1,50 @@
+body {
+	font-family: Tahoma,Arial,Geneva,Helvetica,sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+div {
+	text-align: left;
+}
+
+.wide {
+
+
+}
+
+.header {
+	background-color: #336699;
+    color: #ffffff;
+    font-size: 100%;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.applist {
+	width: 45%; 
+	float: left;
+
+}
+
+.year {
+	
+	padding: 10px;
+}
+
+.menu ul {
+   list-style: none;
+   padding: 10px;
+}
+
+.news {
+	width: 45%; 
+	float: right;
+	padding: 10px;
+	
+
+}
+
+.footer {
+	
+}
