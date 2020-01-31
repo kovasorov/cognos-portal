@@ -1,18 +1,40 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<title>Cognos Contributor Portal</title>
-<link rel="stylesheet" type="text/css" href="portal.css">
+<html>
+<head>
+	<title>Tabs</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="portal.css">
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#content").find("[id^='tab']").hide(); // Hide all content
+    $("#tabs li:first").attr("id","current"); // Activate the first tab
+    $("#content #tab1").fadeIn(); // Show first tab's content
+    
+    $('#tabs a').click(function(e) {
+        e.preventDefault();
+        if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+         return;       
+        }
+        else{             
+          $("#content").find("[id^='tab']").hide(); // Hide all content
+          $("#tabs li").attr("id",""); //Reset id's
+          $(this).parent().attr("id","current"); // Activate this
+          $('#' + $(this).attr('name')).fadeIn(); // Show content for the current tab
+        }
+    });
+});
+</script>
+</head>
 <body>
-<div class="wide">
-  <div class="header">
-    <!-- Шапка -->
-    <center><p>Cognos Contributor Portal</p></center>
-  </div>
-  <!-- Список приложений -->
-  <div class="applist">
-    <div class="year">
-    <h1>2015 Год</h1>
-    <h2>Оперативная месячная отчётность</h2>
+<ul id="tabs">
+    <li><a href="#" name="tab1">2015</a></li>
+    <li><a href="#" name="tab2">2014</a></li>
+    <li><a href="#" name="tab3">News</a></li>
+</ul>
+
+<div id="content"> 
+    <div id="tab1">
+    	<h2>Оперативная месячная отчётность</h2>
     <div class="menu">
     <ul>
       <li><a href="/planning02.asp?AppId=1201506">Неценовые улучшения</a></li>
@@ -37,9 +59,8 @@
     </ul>
     </div>
     </div>
-    <div class="year">
-    <h1>2014 Год</h1>
-    <h2>Оперативная месячная отчётность</h2>
+    <div id="tab2">
+    	<h2>Оперативная месячная отчётность</h2>
     <div class="menu">
     <ul>
       <li><a href="/planning02.asp?AppId=1201406">Неценовые улучшения</a></li>
@@ -64,14 +85,7 @@
     </ul>
     </div>
     </div>
-  </div>
-  <div class="news">
-  <!-- Новости и информация -->
-  <p>Внимание!<br>Включена парольная политика (требования SOX). Требования к паролю &mdash; минимум 7 символов, пароль чувствителен к регистру (строчные/заглавные), только английские символы, срок действия пароля 3 месяца.</p>
-  </div>
-  <div class="footer">
-  <!-- Подвал -->
-  </div>
+    <div id="tab3"><p>Внимание!<br>Включена парольная политика (требования SOX). Требования к паролю &mdash; минимум 7 символов, пароль чувствителен к регистру (строчные/заглавные), только английские символы, срок действия пароля 3 месяца.</p></div>
+    
 </div>
 </body>
-</html>
